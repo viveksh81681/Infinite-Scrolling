@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .body{
+            border:40px solid yellow; 
+            margin: auto;
+            width: 540px;
+        }
+        .container {
+            border: 20px solid rgb(129,0,0);
+            border-radius:10px;
+            text-align: center;
+            width: 500px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="body">
+    <div class="container">
+        
+    </div>
+</div>
+
+
+</body>
+</html>
+<script>
+    var div = document.querySelector(".container");
+    var n=1;
+    var N =25;
+    var getData = (n,N) => {
+        for(i=n;i<=N;i++){
+        var h1 = document.createElement("h1");
+        h1.textContent = `Masai Student ${i}`
+        div.append(h1)
+        }
+    }
+    getData(n,N);
+    window.addEventListener("scroll",() => {
+        const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
+        if(scrollTop + clientHeight >= scrollHeight){
+            console.log("dsad")
+            n=N+1;
+            N = N+25;
+            getData(n,N);
+        }
+    })
+</script>
